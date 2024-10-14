@@ -14,7 +14,7 @@ def load_data():
 # Load model
 @st.cache(allow_output_mutation=True)
 def load_model():
-    with open('house_price_model.pkl', 'rb') as file:
+    with open('prediksi_harga_rumah.sav', 'rb') as file:
         model = pickle.load(file)
     return model
 
