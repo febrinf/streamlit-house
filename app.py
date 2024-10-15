@@ -60,14 +60,10 @@ if st.button("Prediksi Harga"):
         scaled_input_data = scaler.transform(input_data)
 
         # Lakukan prediksi harga rumah
-        predicted_price_usd = model.predict(scaled_input_data)[0]
+        predicted_price = model.predict(scaled_input_data)[0]
 
-        # Konversi ke rupiah (misal 1 USD = 15,000 IDR)
-        conversion_rate = 15000
-        predicted_price_idr = predicted_price_usd * conversion_rate
-
-        # Tampilkan hasil prediksi dalam rupiah
-        st.success(f"Harga Rumah yang Diprediksi: Rp {predicted_price_idr:,.2f}")
+        # Tampilkan hasil prediksi
+        st.success(f"Harga Rumah yang Diprediksi: Rp {predicted_price:,.2f}")
 
         # Opsional: Tampilkan detail input pengguna
         st.write("### Detail Input:")
