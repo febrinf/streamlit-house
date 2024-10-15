@@ -4,6 +4,23 @@ import numpy as np
 import pickle
 from sklearn.preprocessing import StandardScaler
 
+# Menambahkan CSS untuk latar belakang
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://png.pngtree.com/background/20231101/original/pngtree-3d-rendering-of-contemporary-minimalistic-home-picture-image_5825945.jpg");
+             background-size: cover;
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+# Panggil fungsi untuk menambahkan background
+add_bg_from_url()
+
 # Load dataset (pastikan file CSV berada di path yang benar)
 @st.cache
 def load_data():
